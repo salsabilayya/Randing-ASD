@@ -1,11 +1,11 @@
-def mergerSort(list):
+def mergeSort(list):
     list_length = len(list)
     if list_length == 1:
         return list
 
     mid_point = list_length // 2
-    ngiri_partition = mergerSort(list[:mid_point])
-    nganan_partition = mergerSort(list[mid_point:])
+    ngiri_partition = mergeSort(list[:mid_point])
+    nganan_partition = mergeSort(list[mid_point:])
     return merge(ngiri_partition, nganan_partition)
 
 def merge(ngiri, nganan):
@@ -46,5 +46,5 @@ tampungan = []
 print("List awal sebelum diurutkan ",listacak)
 pisah(listacak)
 print("List setelah diurutkan ",tampungan)
-sorted_list = mergerSort(tampungan)
+sorted_list = mergeSort(tampungan)
 print("Hasil akhir list ",sorted_list)
